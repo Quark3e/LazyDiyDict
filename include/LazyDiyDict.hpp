@@ -64,7 +64,7 @@ namespace LazyDiyDict {
             if(loopInit) resultString += ",";
             else loopInit = true;
             if(prettyPrint==1 || prettyPrint==2) resultString += "\n"+std::string(left_indent, ' ');
-            resultString += DIY::formatNumber<T>(elem, width, decimals, align, useBoolAlpha);
+            resultString += LazyDiyDict::formatNumber<T>(elem, width, decimals, align, useBoolAlpha);
         }
         if(prettyPrint==1 || prettyPrint==2) resultString += "\n";
         resultString += "}"+std::string(padding, ' ');
@@ -96,7 +96,7 @@ namespace LazyDiyDict {
                 if(loopInit0) resultString += ",";
                 else {loopInit0 = true;}
                 if(prettyPrint==1) resultString += "\n"+std::string(left_indent*2, ' ');
-                resultString += DIY::formatNumber<T>(elem, width, decimals, align, useBoolAlpha);
+                resultString += LazyDiyDict::formatNumber<T>(elem, width, decimals, align, useBoolAlpha);
             }
             if(prettyPrint==1) resultString += "\n"+std::string(left_indent, ' ');
             resultString += "}";
@@ -175,12 +175,12 @@ namespace LazyDiyDict {
     //==========Helper Functions==========
 
     /**
-     * Dictionary of pre-defined group of types sorted by `std::string` type "keys".(detailed definition of type and type-code/typeID's can be found in `DIY::dict::dict_types[6][6]` docstring)
+     * Dictionary of pre-defined group of types sorted by `std::string` type "keys".(detailed definition of type and type-code/typeID's can be found in `LazyDiyDict::dict::dict_types[6][6]` docstring)
      * 
      */
     class dict {
         private:
-            std::string _info_name = "DIY::dict";
+            std::string _info_name = "LazyDiyDict::dict";
 
 
             int  arg_searchVec_threadLen    = 100;
@@ -608,7 +608,7 @@ namespace LazyDiyDict {
     template<class _key_type, class _store_type>
     class typed_dict {
         private:
-            std::string _info_name = "DIY::typed_dict";
+            std::string _info_name = "LazyDiyDict::typed_dict";
             
             std::vector<_key_type>      _keys;
             std::vector<_store_type*>   _lookup;
