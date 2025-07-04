@@ -26,13 +26,7 @@ namespace LazyDiyDict {
         tempStream << std::fixed << std::setprecision(varPrecision) << value;
         return tempStream.str();
     }
-    template<class T> inline std::string formatNumber(
-        T value,
-        int strWidth,
-        int varPrecision,
-        std::string align,
-        bool numberFill
-    ) {
+    template<class T> inline std::string formatNumber(T value, int strWidth, int varPrecision, std::string align, bool numberFill) {
         std::stringstream outStream, _temp;
         int fillZeros = 0;
         if(numberFill && align=="right") {
